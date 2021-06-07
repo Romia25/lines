@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <!-- Inserer un contenu dynamique a un template -->
+        <title>
+            <ui:insert name="title">Be P</ui:insert>
+        </title>
+        
+        <f:facet name="first">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+            
+            <META http-equiv="Cache-Control" content="no-cache"/> 
+            <META HTTP-EQUIV="Pragma" CONTENT="no-cache"/>
+            <META HTTP-EQUIV="Expires" CONTENT="-1"/>
+        </f:facet>
+        
+        <link rel="shorcut icon" href="#{request.contextPath}/resources/images/favicon.io" type="image/x-icon"/>
+        <script name="jquery/jquery.js" library="primefaces"></script>
+        <h:outputStylesheet library="css" name="pfcrud.css"/>
+        <h:outputScript library="srcipts" name="pfcrud.js"/>
+        <meta http-equiv="X-UA-COmpatible" content="IE=8"/>
+        <!-- don't forget css things -->
+        
+    </h:head>
+    <h:body>
+        <!-- Inserer un contenu statique(une page) a un template -->
+        <p:growl id="growl" life="5000" showDetail="false"/>
+        <p:layout fullPage="true">
+            <p:layoutUnit position="north" size="100">
+                <ui:include src="upMenu.xhtml"></ui:include>
+            </p:layoutUnit>
+            
+            <p:layoutUnit position="center">
+                <ui:insert name="body"/>
+            </p:layoutUnit>
+            
+            <p:layoutUnit position="south" size="100">
+                <ui:include src="footer.xhtml"></ui:include>
+            </p:layoutUnit>
+            
+            <p:layoutUnit position="west" size="150">
+                <ui:include src="rside.xhtml"></ui:include>
+            </p:layoutUnit>
+        </p:layout>
+    </h:body>
+</html>
+
